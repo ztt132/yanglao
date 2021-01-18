@@ -1,0 +1,89 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"/database/webroot/yanglao/public/../application/admin/view/foodupload/index.html";i:1604039330;}*/ ?>
+<!DOCTYPE html>
+<html class="x-admin-sm">
+<head>
+    <meta charset="UTF-8">
+    <title>上传助餐点</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="XADMIN_BASE_DIR/css/font.css">
+    <link rel="stylesheet" href="XADMIN_BASE_DIR/css/xadmin.css">
+    <link rel="stylesheet" href="XADMIN_BASE_DIR/css/yanglao.css">
+    <script src="XADMIN_BASE_DIR/js/jquery.min.js"></script>
+    <script src="XADMIN_BASE_DIR/lib/layui/layui.js" charset="utf-8"></script>
+    <script src="XADMIN_BASE_DIR/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+
+<form class="layui-form" action="">
+    <div class="layui-fluid">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+        <legend>指定允许上传的文件类型</legend>
+    </fieldset>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">城市</label>
+        <div class="layui-input-block margin-right">
+            <select name="city_id" lay-filter="city_id" id="city_id" lay-verify="city_id">
+                <?php if(is_array($citys) || $citys instanceof \think\Collection || $citys instanceof \think\Paginator): if( count($citys)==0 ) : echo "" ;else: foreach($citys as $key=>$city): ?>
+                <option value="<?php echo $city['id']; ?>"><?php echo $city['city_name']; ?></option>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+            </select>
+        </div>
+    </div>
+
+    <button type="button" class="layui-btn" id="upload"><i class="layui-icon"></i>上传文件</button>
+        成功：
+        <div class="layui-input-block">
+            <textarea id="content" placeholder="" class="layui-textarea" readonly style="resize: none;height:400px "></textarea>
+        </div>
+        失败：
+        <div class="layui-input-block">
+            <textarea id="fali_content" placeholder="" class="layui-textarea" readonly style="resize: none;height:400px "></textarea>
+        </div>
+    </div>
+</form>
+<script>
+    var city_id = $('#city_id').val();
+    console.log('city_id:' + city_id);
+    layui.use(['upload','form'], function(){
+        var $ = layui.jquery,upload = layui.upload,form=layui.form;
+
+        form.on('select(city_id)', function(data){
+            // 切换的城市id
+            city_id = data.value;
+        });
+
+        //指定允许上传的文件类型
+        upload.render({
+            elem: '#upload',
+            url: '/admin/foodupload/upload',//改成您自己的上传接口,
+            accept: 'file', //普通文件
+            exts:'xlsx',
+            before:function() {
+                this.data = {city_id:city_id}
+            },
+            done: function(res){
+                layer.msg('上传成功');
+                $.each(res.data, function(k,v){
+                    if (v == 'success') {
+                        $('#content').val($('#content').val() + '\r\n' + k + ":" + v);
+                    } else {
+                        $('#fali_content').val($('#fali_content').val() + '\r\n' + k + ":" + v);
+                    }
+
+                });
+            }
+        });
+    })
+
+
+</script>
+</body>
+</html>

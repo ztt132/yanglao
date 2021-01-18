@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楼栋海报</title>
+    <link rel="stylesheet" type="text/css" href="./css.css">
+    <style type="text/css">
+        body {
+            background-color: #000;
+            text-align: center;
+            font-family: "Microsoft Yahei"
+        }
+
+        .name {
+            display: flex;
+            display: -webkit-flex;
+            font-size: 200px
+        }
+
+        .name div {
+            width: 71px;
+            text-align: left;
+        }
+
+        .des {
+            display: flex;
+            display: -webkit-flex;
+            font-size: 46px;
+            margin-top: 8px
+        }
+
+        .des div {
+            width: 150px;
+            text-align: left;
+            font-size:120px;
+        }
+
+        .house_num {
+            font-size: 24px;
+            color: #404040
+        }
+
+        .house_area {
+            font-size: 18px;
+            color: #404040;
+            font-weight: normal
+        }
+
+        .unit_price {
+            font-size: 18px;
+            color: gray;
+            font-weight: normal
+        }
+
+        .all_price {
+            font-size: 22px;
+            color: #ee5400
+        }
+
+        .watermark {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("./watermark.png")
+        }
+
+        .copyright {
+            font-size: 24px;
+            color: #666;
+            font-weight: normal;
+            padding: 25px 0;
+            text-align: left
+        }
+
+        .main{
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            -webkit-justify-content: space-around;
+            -webkit-align-items: flex-end;
+            align-items: flex-end;
+        }
+
+        .main .item{
+            margin-bottom:20px;
+            margin-left:20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="width:3000px">
+        <div class="header">
+            <div class="title">
+                <div class="name">楼盘名称楼盘名称楼盘</div>
+                <div class="des">
+                    <div>一</div>
+                    <div>房</div>
+                    <div>一</div>
+                    <div>价</div>
+                    <div>示</div>
+                    <div>意</div>
+                    <div>图</div>
+                </div>
+            </div>
+            <div class="space"></div>
+            <div class="code">
+                <img src="./qrcode.jpg" width="430" height="430" alt="" srcset="">
+                <p>长按识别二维码<br />查看更多信息</p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="item">
+                <div class="num">1号楼</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td colspan="1">
+                                1单元
+                            </td>
+                            <td colspan="2">
+                                2单元
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="div_th" style="font-size:24px">1层</div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">101</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">201</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">202</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="item">
+                <div class="num">1号楼</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td colspan="1">
+                                1单元
+                            </td>
+                            <td colspan="2">
+                                2单元
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="div_th" style="font-size:24px">1层</div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">101</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">201</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">202</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="div_th" style="font-size:24px">1层</div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">101</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">201</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">202</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="item">
+                <div class="num">1号楼</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td colspan="1">
+                                1单元
+                            </td>
+                            <td colspan="2">
+                                2单元
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="div_th" style="font-size:24px">1层</div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">101</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">201</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="div_td">
+                                    <div class="house_num">202</div>
+                                    <div class="house_area">100㎡</div>
+                                    <div class="unit_price">10000元/㎡</div>
+                                    <div class="all_price">100万元</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            
+
+            <div class="watermark"></div>
+
+        </div>
+        <div class="copyright">* 该一房一价表由365淘房提供</div>
+    </div>
+
+    <!-- <div class="header">
+        <div class="pro-text">
+
+        </div>
+        <img src="img/code.png" alt="" srcset="">
+    </div> -->
+
+</body>
+
+</html>
