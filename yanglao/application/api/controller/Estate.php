@@ -182,25 +182,36 @@ class Estate extends Base
         if (empty($estate)) {
             return ['code' => 0, 'data' => [], 'msg'  => '对象不存在'];
         }
+        // 相册列表
+        $photos = $this->estatePhotoModel->getPhotoListByEstateId($id);
+
         // 户型列表
         $hxs = $this->estateHxModel->getHxListByEstateId($id);
+
         // 根据户型得到轮播中的vr列表
         $vrs = [];
+        $count = count($photos);
         if (!empty($hxs)) {
             foreach ($hxs as $h) {
                 if (!empty($h['pics'])) {
                     foreach ($h['pics'] as $pic) {
-                        $vrs[] = [
-                            "pic" => $pic,
-                            "vr" => $h['vr']
-                        ];
+                        if (!empty($h['vr'])) {
+                            $vrs[] = [
+                                "pic" => $pic,
+                                "vr" => $h['vr']
+                            ];
+                        } else {
+                            $photos[] = [
+                                'id' => $count++,
+                                'photo_type' => 1,
+                                'is_cover' => 1,
+                                'pic' => $pic
+                            ];
+                        }
                     }
                 }
             }
         }
-
-        // 相册列表
-        $photos = $this->estatePhotoModel->getPhotoListByEstateId($id);
         // photo
         $data = [
             'estate' => $estate,
