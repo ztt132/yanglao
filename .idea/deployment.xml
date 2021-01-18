@@ -5,7 +5,7 @@
       <paths name="养老小程序">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$/vendor" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$/yanglao" web="/" />
           </mappings>
         </serverdata>
       </paths>

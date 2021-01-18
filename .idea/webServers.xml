@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="deda3dc6-24b5-4403-96b4-be6f92a00f48" name="养老小程序" url="http://202.102.74.14">
-        <fileTransfer rootFolder="/vendor" host="202.102.74.14" port="21">
+        <fileTransfer rootFolder="/yanglao" host="202.102.74.14" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
