@@ -112,15 +112,23 @@ class Collection extends Baseuser
         }
 
         $ret = [];
+        $org_ids = array_column($orgs,'id');
+        $estate_ids = array_column($estates,'id');
+
         foreach ($collections as $tc) {
             if ($tc['type'] == 1) {
-                $obj = $orgs[$tc['object_id']];
-                $obj['type'] = 1;
+                if (in_array($tc['object_id'], $org_ids)) {
+                    $obj = $orgs[$tc['object_id']];
+                    $obj['type'] = 1;
+                    $ret[] = $obj;
+                }
             } elseif ($tc['type'] == 2) {
-                $obj = $estates[$tc['object_id']];
-                $obj['type'] = 2;
+                if (in_array($tc['object_id'], $estate_ids)) {
+                    $obj = $estates[$tc['object_id']];
+                    $obj['type'] = 2;
+                    $ret[] = $obj;
+                }
             }
-            $ret[] = $obj;
         }
 
 
