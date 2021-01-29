@@ -445,6 +445,48 @@ return [
 //        "city_HotSort" => 0,
 //        "city_zoom" => 13,
 //        "city_dist_zoom" => 12
+    ],
+    [
+        "city_key" => "zj",
+        "city_name" => "镇江",
+        "city_py" => "zhenjaing",
+        "city_x" => "119.432567",
+        "city_y" => "32.197975"
+    ],
+    [
+        "city_key" => "ha",
+        "city_name" => "淮安",
+        "city_py" => "huaian",
+        "city_x" => "119.012981",
+        "city_y" => "33.610084"
+    ],
+    [
+        "city_key" => "jh",
+        "city_name" => "金华",
+        "city_py" => "jinhua",
+        "city_x" => "119.644377",
+        "city_y" => "29.074380"
+    ],
+    [
+        "city_key" => "mas",
+        "city_name" => "马鞍山",
+        "city_py" => "maanshan",
+        "city_x" => "118.510330",
+        "city_y" => "31.684691"
+    ],
+    [
+        "city_key" => "sh",
+        "city_name" => "上海",
+        "city_py" => "shanghai",
+        "city_x" => "121.475232",
+        "city_y" => "31.228731"
+    ],
+    [
+        "city_key" => "tx",
+        "city_name" => "桐乡",
+        "city_py" => "tongxiang",
+        "city_x" => "120.543149",
+        "city_y" => "30.635190"
     ]
 ];
 ?>

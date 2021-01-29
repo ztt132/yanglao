@@ -9,7 +9,6 @@ class Index extends AdminBase
         parent::__construct($request);
     }
 
-
     public function _initialize() {}
 
     public function index() {

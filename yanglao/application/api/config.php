@@ -12,5 +12,6 @@ return [
 
     'default_return_type'=>'json',
     'default_filter'         => 'htmlspecialchars',
+    'exception_handle' => '\\app\\api\\exception\\ApiExceptionHandler'
 
 ];
